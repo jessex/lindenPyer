@@ -8,11 +8,15 @@ Angles move counter-clockwise, as with the unit circle:
       90
        |
        | 
---180------0--
+--180--+---0--
        |
        |
       270
        |
+
+Rule set should be list of 2-tuples which are (before symbol, after string).
+Constants should be list of 2-tuples which are (symbol, meaning).
+Patterns should just be strings of symbols.
 
 """
 
@@ -91,7 +95,6 @@ def draw_pattern(angle, constants, pattern, length=1, start_angle=0, start_pos=(
                     fd(length)
                     down()
         
-    
     end = time.time()
     print "Drawing time: %f sec" % (end-beginning)
     
@@ -99,7 +102,6 @@ def draw_pattern(angle, constants, pattern, length=1, start_angle=0, start_pos=(
     goto((farthest_left + farthest_right)/2, highest+25)
     color("red")
     write(title, align="center", font=("Arial", 14, "normal"))
-    
         
         
 if __name__ == "__main__":
